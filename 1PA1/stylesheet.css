@@ -1,0 +1,111 @@
+@property --arena {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #F54927;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', sans-serif;
+}
+
+nav {
+    background-color: var(--arena);
+    padding: 30px;
+    text-align: center;
+}
+
+.navbar-item {
+    color: white;
+    text-decoration: none;
+    margin-right: 50px;
+}
+
+.navbar-item:hover {
+    color: aqua;
+    font-weight: bold;
+}
+
+header {
+    background-image: url("cafe\ imagen.jpeg");
+    background-size: cover;
+    background-position: center;
+    color: #F54927;
+}
+
+h1 {
+    color: aliceblue;
+}
+
+header > div {
+    padding: 300px 300px 300px 100px;
+}
+
+.button {
+    padding: 10px;
+    background-color: rgb(198, 126, 49);
+    color: var(--arena);
+    display: inline-block;
+    margin: 15px 0 15px;
+}
+
+.button:hover {
+    background-color: bisque;
+    color: black;
+    cursor: pointer;
+}
+#section1{
+    background-color: bisque;
+    text-align: left;
+}
+#img-cafe{
+    width: 200px;
+}
+
+section, footer{
+    padding:100px;
+}
+h2{
+    font-size:48px;
+    line-height: 100px;
+    color: #F54927;
+}
+section1 p{
+    width: 50%;
+}
+#sct1-text{
+    padding-left: 100px;
+}
+
+#section2 {
+    text-align: center;
+}
+#section2 table{
+    margin: auto;
+    margin-top: 35px;
+    border: 1px solid #F54927
+}
+#section2 td,th{
+    padding: 10px;
+}
+#section2 th{
+    background-color: bisque;
+    color: #F54927;
+}
+#section td{
+    border-bottom: 1px dotted #F54927;
+}
+
+footer {
+    background-color: bisque;
+    color: #F54927;
+}
+footer table{
+    width: 100%;
+}
+
+#contacto{
+    text-align: right;
+}
