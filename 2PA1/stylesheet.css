@@ -1,0 +1,73 @@
+/*COMBINADOR DESCENDIENTE 
+div p {
+    background-color: aqua;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}*/
+
+div > p {
+    background-color: blueviolet;
+    padding: 2px;
+    border: 1px dashed black; 
+}
+
+/*COMBINADOR SIGUIENTE HERMANO */
+
+div + p{
+    background-color: beige;
+    color: rgb(10, 10, 10);
+    font-size: 24px;
+}
+
+div ~p {
+    background-color: antiquewhite;
+    color: black;
+}
+
+.link:hover{
+    color: hotpink;
+}
+
+.link:link{
+    color: blue;
+}
+
+.link.focus{
+    font-weight: bold;
+}
+.link:active {
+    color: blue;
+}
+.link:visited {
+    color: rgb(189, 39, 152);
+}
+
+#lorem::first-line {
+    font-weight: bold;
+    background-color: rgb(226, 128, 203);
+    color: azure;
+
+}
+#lorem::first-letter{
+    font-weight: bold;
+    font-size: 50px;
+
+}
+
+div::before{
+    content: "💋🩰";
+}
+
+div::after{
+    content: "💕🌺";
+}
+
+::marker {
+    color: darksalmon;
+
+}
+
+::selection{
+    background-color: aqua;
+    color: blueviolet;
+}
