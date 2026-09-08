@@ -1,0 +1,46 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    background-color: lightcyan;
+}
+
+#contenedor {
+    border: 2px solid hotpink;
+    background-color: rgb(170, 170, 170);
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+}
+
+section {
+    margin: 20px;
+}
+
+.caja {
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+}
+
+.caja1 {
+    background-color: rgb(39, 192, 223);
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+.caja2 {
+    background-color: darkslateblue;
+    text-align: right;
+    position: relative;
+    left:150px;
+    bottom: 140px;
+}
+
+.caja3 {
+    background-color: hotpink;
+    font-style: italic;
+    position: relative;
+    bottom: 40px;
+    left: 50px;
+}
