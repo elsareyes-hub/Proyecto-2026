@@ -1,0 +1,788 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Grid Layout</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f5f5f5;
+            color: #222;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        hr {
+            margin: 40px 0;
+            border: 0;
+            border-top: 2px solid #ccc;
+        }
+
+        /*
+        ESTILO GENERAL DE LAS CUADRÍCULAS
+        */
+
+        .grid {
+            width: 100%;
+            max-width: 700px;
+            margin-bottom: 20px;
+
+            display: grid;
+
+            gap: 4px;
+        }
+
+        .item {
+            background-color: #2418e8;
+            border: 2px solid white;
+
+            min-height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+
+        /*
+        ==========================================
+        1. NEW SCREEN
+        ==========================================
+        */
+
+        .new-screen {
+            width: 160px;
+            height: 200px;
+            background-color: white;
+            border: 2px solid #aaa;
+        }
+
+
+        /*
+        ==========================================
+        2. 1 COLUMN
+        ==========================================
+        */
+
+        .one-column {
+            grid-template-columns: 1fr;
+        }
+
+
+        /*
+        ==========================================
+        3. 2 COLUMNS
+        ==========================================
+        */
+
+        .two-columns {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+
+        /*
+        ==========================================
+        4. 3 COLUMNS
+        ==========================================
+        */
+
+        .three-columns {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+
+        /*
+        ==========================================
+        5. 4 COLUMNS
+        ==========================================
+        */
+
+        .four-columns {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+
+        /*
+        ==========================================
+        6. 2 ROWS
+        ==========================================
+        */
+
+        .two-rows {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, 100px);
+        }
+
+
+        /*
+        ==========================================
+        7. 3 ROWS
+        ==========================================
+        */
+
+        .three-rows {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 90px);
+        }
+
+
+        /*
+        ==========================================
+        8. 4 ROWS
+        ==========================================
+        */
+
+        .four-rows {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4, 80px);
+        }
+
+
+        /*
+        ==========================================
+        9. 5 ROWS
+        ==========================================
+        */
+
+        .five-rows {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(5, 70px);
+        }
+
+
+        /*
+        ==========================================
+        10. 6 ROWS
+        ==========================================
+        */
+
+        .six-rows {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(6, 60px);
+        }
+
+
+        /*
+        ==========================================
+        11. LARGE GRID
+        ==========================================
+        */
+
+        .large-grid {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 90px);
+        }
+
+
+        /*
+        ==========================================
+        12. SMALL GRID
+        ==========================================
+        */
+
+        .small-grid {
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(5, 55px);
+        }
+
+
+        /*
+        ==========================================
+        13. MOSAIC 1
+        ==========================================
+        */
+
+        .mosaic-1 {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 2fr 1fr;
+        }
+
+        .mosaic-1 .item:nth-child(1) {
+            grid-column: 1 / 3;
+        }
+
+
+        /*
+        ==========================================
+        14. MOSAIC 2
+        ==========================================
+        */
+
+        .mosaic-2 {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 2fr 1fr;
+        }
+
+        .mosaic-2 .item:nth-child(1) {
+            grid-column: 1 / 3;
+        }
+
+
+        /*
+        ==========================================
+        15. MOSAIC 3
+        ==========================================
+        */
+
+        .mosaic-3 {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 3fr 1fr;
+        }
+
+        .mosaic-3 .item:nth-child(1) {
+            grid-column: 1 / 5;
+        }
+
+
+        /*
+        ==========================================
+        16. MOSAIC 4
+        ==========================================
+        */
+
+        .mosaic-4 {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr 1fr 1fr;
+        }
+
+        .mosaic-4 .item:nth-child(3) {
+            grid-column: 1 / 3;
+        }
+
+
+        /*
+        ==========================================
+        17. MOSAIC 5
+        ==========================================
+        */
+
+        .mosaic-5 {
+            grid-template-columns: 2fr 1fr 2fr;
+            grid-template-rows: 1fr 1fr 1fr;
+        }
+
+        .mosaic-5 .item:nth-child(1) {
+            grid-column: 1 / 3;
+        }
+
+        .mosaic-5 .item:nth-child(2) {
+            grid-column: 3;
+        }
+
+        .mosaic-5 .item:nth-child(3) {
+            grid-column: 1;
+        }
+
+        .mosaic-5 .item:nth-child(4) {
+            grid-column: 2 / 4;
+        }
+
+
+        /*
+        ==========================================
+        18. MOSAIC 6
+        ==========================================
+        */
+
+        .mosaic-6 {
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: repeat(3, 1fr);
+        }
+
+        .mosaic-6 .item:nth-child(1) {
+            grid-row: 1 / 4;
+        }
+
+        .mosaic-6 .item:nth-child(2) {
+            grid-column: 2;
+            grid-row: 1 / 2;
+        }
+
+        .mosaic-6 .item:nth-child(3) {
+            grid-column: 2;
+            grid-row: 2 / 4;
+        }
+
+
+        /*
+        ==========================================
+        19. MOSAIC 7
+        ==========================================
+        */
+
+        .mosaic-7 {
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: repeat(3, 1fr);
+        }
+
+        .mosaic-7 .item:nth-child(1) {
+            grid-column: 1;
+            grid-row: 1 / 3;
+        }
+
+        .mosaic-7 .item:nth-child(2) {
+            grid-column: 2 / 4;
+            grid-row: 1;
+        }
+
+        .mosaic-7 .item:nth-child(3) {
+            grid-column: 2;
+            grid-row: 2 / 4;
+        }
+
+        .mosaic-7 .item:nth-child(4) {
+            grid-column: 3;
+            grid-row: 2 / 4;
+        }
+
+
+        /*
+        ==========================================
+        20. MOSAIC 8
+        ==========================================
+        */
+
+        .mosaic-8 {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+        }
+
+        .mosaic-8 .item:nth-child(1) {
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
+        }
+
+        .mosaic-8 .item:nth-child(2) {
+            grid-column: 3;
+            grid-row: 1;
+        }
+
+        .mosaic-8 .item:nth-child(3) {
+            grid-column: 4;
+            grid-row: 1 / 3;
+        }
+
+        .mosaic-8 .item:nth-child(4) {
+            grid-column: 3;
+            grid-row: 2;
+        }
+
+        .mosaic-8 .item:nth-child(5) {
+            grid-column: 1;
+            grid-row: 3;
+        }
+
+        .mosaic-8 .item:nth-child(6) {
+            grid-column: 2 / 4;
+            grid-row: 3;
+        }
+
+        .mosaic-8 .item:nth-child(7) {
+            grid-column: 4;
+            grid-row: 3 / 5;
+        }
+
+        .mosaic-8 .item:nth-child(8) {
+            grid-column: 1 / 3;
+            grid-row: 4;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <h1>Grid Layout</h1>
+
+
+    <!-- 1. NEW SCREEN -->
+
+    <h2>New screen</h2>
+
+    <div class="new-screen"></div>
+
+
+    <hr>
+
+
+    <!-- 2. 1 COLUMN -->
+
+    <h2>1 column</h2>
+
+    <div class="grid one-column">
+
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+
+    </div>
+
+
+    <hr>
+
+
+    <!-- 3. 2 COLUMNS -->
+
+    <h2>2 columns</h2>
+
+    <div class="grid two-columns">
+
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+
+    </div>
+
+
+    <hr>
+
+
+    <!-- 4. 3 COLUMNS -->
+
+    <h2>3 columns</h2>
+
+    <div class="grid three-columns">
+
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+
+    </div>
+
+
+    <hr>
+
+
+    <!-- 5. 4 COLUMNS -->
+
+    <h2>4 columns</h2>
+
+    <div class="grid four-columns">
+
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+
+    </div>
+
+
+    <hr>
+
+
+    <!-- 6. 2 ROWS -->
+
+    <h2>2 rows</h2>
+
+    <div class="grid two-rows">
+
+        <div class="item">1</div>
+        <div class="item">2</div>
+
+    </div>
+
+
+    <hr>
+
+
+    <!-- 7. 3 ROWS -->
+
+    <h2>3 rows</h2>
+
+    <div class="grid three-rows">
+
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+
+    </div>
+
+
+    <hr>
+
+
+    <!-- 8. 4 ROWS -->
+
+    <h2>4 rows</h2>
+
+    <div class="grid four-rows">
+
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+
+    </div>
+
+
+    <hr>
+
+
+    <!-- 9. 5 ROWS -->
+
+    <h2>5 rows</h2>
+
+    <div class="grid five-rows">
+
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+
+    </div>
+
+
+    <hr>
+
+
+    <!-- 10. 6 ROWS -->
+
+    <h2>6 rows</h2>
+
+    <div class="grid six-rows">
+
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+
+    </div>
+
+
+    <hr>
+
+
+    <!-- 11. LARGE GRID -->
+
+    <h2>Large grid</h2>
+
+    <div class="grid large-grid">
+
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+
+    </div>
+
+
+    <hr>
+
+
+    <!-- 12. SMALL GRID -->
+
+    <h2>Small grid</h2>
+
+    <div class="grid small-grid">
+
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+
+        <div class="item">11</div>
+        <div class="item">12</div>
+        <div class="item">13</div>
+        <div class="item">14</div>
+        <div class="item">15</div>
+
+        <div class="item">16</div>
+        <div class="item">17</div>
+        <div class="item">18</div>
+        <div class="item">19</div>
+        <div class="item">20</div>
+
+        <div class="item">21</div>
+        <div class="item">22</div>
+        <div class="item">23</div>
+        <div class="item">24</div>
+        <div class="item">25</div>
+
+    </div>
+
+
+    <hr>
+
+
+    <!-- 13. MOSAIC 1 -->
+
+    <h2>Mosaic 1</h2>
+
+    <div class="grid mosaic-1">
+
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+
+    </div>
+
+
+    <hr>
+
+
+    <!-- 14. MOSAIC 2 -->
+
+    <h2>Mosaic 2</h2>
+
+    <div class="grid mosaic-2">
+
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+
+    </div>
+
+
+    <hr>
+
+
+    <!-- 15. MOSAIC 3 -->
+
+    <h2>Mosaic 3</h2>
+
+    <div class="grid mosaic-3">
+
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+
+    </div>
+
+
+    <hr>
+
+
+    <!-- 16. MOSAIC 4 -->
+
+    <h2>Mosaic 4</h2>
+
+    <div class="grid mosaic-4">
+
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+
+    </div>
+
+
+    <hr>
+
+
+    <!-- 17. MOSAIC 5 -->
+
+    <h2>Mosaic 5</h2>
+
+    <div class="grid mosaic-5">
+
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+
+    </div>
+
+
+    <hr>
+
+
+    <!-- 18. MOSAIC 6 -->
+
+    <h2>Mosaic 6</h2>
+
+    <div class="grid mosaic-6">
+
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+
+    </div>
+
+
+    <hr>
+
+
+    <!-- 19. MOSAIC 7 -->
+
+    <h2>Mosaic 7</h2>
+
+    <div class="grid mosaic-7">
+
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+
+    </div>
+
+
+    <hr>
+
+
+    <!-- 20. MOSAIC 8 -->
+
+    <h2>Mosaic 8</h2>
+
+    <div class="grid mosaic-8">
+
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+
+    </div>
+
+</body>
+</html>
+```
