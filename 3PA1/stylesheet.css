@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    gap: 10px;
+}
+[class^="col-"]{
+    grid-column: span 12;
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px;
+    font-family: Montserrat, 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.col-3{
+    background-color: bisque;
+}
+
+.col-4 {
+    background-color: aquamarine;
+}
+
+.col-6 {
+    background-color: coral;
+}
+
+.col-12 {
+    background-color: hotpink;
+}
+
+/*Breakingpoint de Tablet*/
+@media screen and (min-width: 768px) and (max-width:768px) {
+.col-4{
+    grid-column: span 4;
+}
+
+.col-6{
+    grid-column: span 6;
+}
+}
+ 
+/*Breakingpoint de Tablet*/
+@media screen and (min-width: 992px) {
+    .col-4 {
+        grid-column: span 4;
+    }
+
+    .col-6 {
+        grid-column: span 6;
+    }
+
+    .col-3 {
+        grid-column: span 3;
+    }
+}
