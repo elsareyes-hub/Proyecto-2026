@@ -1,0 +1,379 @@
+
+/* COLORES LA MACHILA */
+
+:root {
+  --rojo: #A33E2D;
+  --beige: #E9DDCD;
+  --crema: #F5EDE3;
+  --blanco: #FFFFFF;
+  --negro: #211713;
+}
+
+/* CONFIGURACIÓN GENERAL */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--blanco);
+  color: var(--negro);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* GRID GENERAL DEL HOME */
+
+.home {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* 1. HEADER - FLEXBOX */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 68px;
+  padding: 12px 20px;
+  background-color: var(--beige);
+}
+
+
+.logo {
+  width: 140px;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+
+
+.menu {
+  border: none;
+  background: none;
+  font-size: 28px;
+  color: var(--negro);
+  cursor: pointer;
+}
+
+.carrito {
+  position: relative;
+  border: none;
+  background: none;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.contador {
+  position: absolute;
+  top: -8px;
+  right: -9px;
+  background-color: var(--rojo);
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+}
+
+/* 2. HERO - GRID Y FLEXBOX */
+
+.hero {
+  display: grid;
+  gap: 12px;
+  background-color: var(--rojo);
+  color: white;
+  padding: 30px 20px 20px;
+}
+
+.origen {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(48px, 13vw, 65px);
+  font-weight: 900;
+  line-height: 0.95;
+}
+
+.hero h2 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.hero-descripcion {
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* BOTONES HERO */
+
+.hero-botones {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 8px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.comprar {
+  flex: 1;
+  background-color: var(--crema);
+  color: var(--rojo);
+}
+
+.conocer {
+  flex: 1;
+  border: 2px solid var(--crema);
+  color: white;
+}
+
+/* 3. FOTO DE LOS TRES FRASCOS */
+
+.foto-principal {
+  width: 100%;
+}
+
+.foto-principal img {
+  display: block;
+  width: 100%;
+  height: 370px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* 4. PRODUCTO DESTACADO */
+
+.producto {
+  display: grid;
+  gap: 17px;
+  padding: 26px 20px 30px;
+  background-color: var(--beige);
+}
+
+.seccion-titulo {
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 800;
+  color: var(--rojo);
+}
+
+.producto-contenido {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.producto-imagen {
+  width: 50%;
+  flex-shrink: 0;
+}
+
+.producto-imagen img {
+  display: block;
+  width: 100%;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.producto-info {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.producto-info h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 0.9;
+}
+
+.cantidad {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.picante {
+  display: flex;
+  gap: 4px;
+  font-size: 18px;
+}
+
+.suave {
+  opacity: 0.3;
+}
+
+.producto-descripcion {
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.ver-producto {
+  background-color: var(--rojo);
+  color: white;
+  width: 100%;
+  padding: 17px;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+/* 5. INFORMACIÓN ADICIONAL */
+
+.especial {
+  display: grid;
+  gap: 25px;
+  padding: 35px 15px;
+  background-color: var(--blanco);
+}
+
+.especial h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.caracteristicas {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.caracteristica {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  text-align: center;
+}
+
+.circulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 58px;
+  height: 58px;
+  border: 1.5px solid var(--negro);
+  border-radius: 50%;
+  font-size: 25px;
+}
+
+.caracteristica p {
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* 6. FOOTER */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 28px 18px 20px;
+  background-color: var(--beige);
+}
+
+.footer-superior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-superior h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.redes {
+  display: flex;
+  gap: 10px;
+}
+
+.redes a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1.5px solid black;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: var(--negro);
+  font-size: 10px;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 9px;
+}
+
+/* RESPONSIVE PARA CELULARES PEQUEÑOS */
+
+@media (max-width: 360px) {
+
+  .hero h1 {
+    font-size: 47px;
+  }
+
+  .hero-botones {
+    gap: 6px;
+  }
+
+  .btn {
+    font-size: 9px;
+  }
+
+  .producto-info h3 {
+    font-size: 28px;
+  }
+
+  .producto-imagen img {
+    height: 190px;
+  }
+
+}
