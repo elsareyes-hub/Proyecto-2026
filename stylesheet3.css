@@ -1,0 +1,575 @@
+
+/* COLORES LA MACHILA */
+
+:root {
+  --rojo: #A33E2D;
+  --beige: #E9DDCD;
+  --crema: #F5EDE3;
+  --blanco: #FFFFFF;
+  --negro: #211713;
+}
+
+/* CONFIGURACIÓN GENERAL */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--blanco);
+  color: var(--negro);
+}
+
+img {
+  max-width: 100%;
+}
+
+/* HEADER CON FLEXBOX */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  min-height: 105px;
+  padding: 15px 6%;
+  background-color: var(--beige);
+}
+
+.logo {
+  width: 145px;
+  height: auto;
+  object-fit: contain;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.menu span {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.menu .activo {
+  color: var(--rojo);
+  border-bottom: 2px solid var(--rojo);
+  padding-bottom: 5px;
+}
+
+.carrito {
+  font-size: 25px;
+}
+
+/* PORTADA CON GRID */
+
+.portada {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 550px;
+  background-color: var(--rojo);
+}
+
+.portada-texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 65px 10%;
+  color: white;
+}
+
+.etiqueta {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.portada h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(70px, 8vw, 120px);
+  font-weight: 900;
+  line-height: 0.9;
+  margin-bottom: 25px;
+}
+
+.frase-portada {
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.portada-imagen {
+  overflow: hidden;
+}
+
+.portada-imagen img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* HISTORIA DE LA MARCA */
+
+.historia {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 8%;
+  padding: 100px 10%;
+  background-color: var(--crema);
+}
+
+.historia-texto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+}
+
+.etiqueta-roja {
+  color: var(--rojo);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.historia h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(65px, 6vw, 95px);
+  font-weight: 900;
+  line-height: 0.95;
+}
+
+.historia-texto p:not(.etiqueta-roja) {
+  max-width: 500px;
+  font-size: 15px;
+  line-height: 2;
+}
+
+.historia-imagen img {
+  display: block;
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* NUESTRA ESENCIA CON FLEXBOX */
+
+.filosofia {
+  padding: 95px 8%;
+  background-color: var(--blanco);
+  text-align: center;
+}
+
+.filosofia h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(55px, 6vw, 85px);
+  font-weight: 900;
+  line-height: 0.95;
+  margin: 15px 0 45px;
+}
+
+.valores {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+}
+
+.valor {
+  flex: 1;
+  max-width: 350px;
+  padding: 35px 25px;
+  background-color: var(--crema);
+  border-radius: 10px;
+}
+
+.numero {
+  display: block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 65px;
+  font-weight: 900;
+  color: var(--rojo);
+  margin-bottom: 20px;
+}
+
+.valor h3 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.valor p {
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* VARIEDADES CON GRID */
+
+.variedades {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 8%;
+  padding: 90px 10%;
+  background-color: var(--beige);
+}
+
+.variedades-imagen img {
+  display: block;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.variedades-texto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+}
+
+.variedades h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(60px, 6vw, 90px);
+  font-weight: 900;
+  line-height: 0.95;
+}
+
+.variedades-texto > p:last-child {
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* FRASE FINAL */
+
+.cierre {
+  padding: 90px 20px;
+  background-color: var(--rojo);
+  color: white;
+  text-align: center;
+}
+
+.cierre h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(55px, 7vw, 100px);
+  font-weight: 900;
+  line-height: 0.95;
+}
+
+.cierre p {
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+/* FOOTER */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 45px 8%;
+  background-color: var(--beige);
+}
+
+.footer-logo {
+  width: 140px;
+  height: auto;
+}
+
+.footer-menu,
+.redes {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.footer-menu span {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.redes img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.copyright {
+  width: 100%;
+  padding-top: 20px;
+  border-top: 1px solid #C9B7A7;
+  text-align: center;
+  font-size: 11px;
+}
+
+/* RESPONSIVE PARA TABLET */
+
+@media (max-width: 1000px) {
+
+  .header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .menu {
+    gap: 20px;
+  }
+
+  .historia,
+  .variedades {
+    padding: 70px 6%;
+  }
+
+  .valores {
+    gap: 20px;
+  }
+
+}
+
+/* RESPONSIVE PARA CELULAR */
+
+@media (max-width: 700px) {
+
+  .header {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 15px;
+  }
+
+  .logo {
+    width: 110px;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .menu span {
+    font-size: 10px;
+  }
+
+  .portada {
+    grid-template-columns: 1fr;
+  }
+
+  .portada-texto {
+    padding: 60px 25px;
+  }
+
+  .portada h1 {
+    font-size: 70px;
+  }
+
+  .portada-imagen {
+    height: 350px;
+  }
+
+  .historia,
+  .variedades {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 60px 25px;
+  }
+
+  .historia h2 {
+    font-size: 65px;
+  }
+
+  .historia-imagen img {
+    height: 350px;
+  }
+
+  .valores {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .valor {
+    width: 100%;
+  }
+
+  .filosofia {
+    padding: 60px 25px;
+  }
+
+  .variedades-imagen img {
+    height: 300px;
+  }
+
+  .variedades h2 {
+    font-size: 60px;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+
+  .footer-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+}
+
+/* CORRECCIÓN DEL HEADER RESPONSIVE */
+
+@media (max-width: 1000px) {
+
+  .header {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 5%;
+  }
+
+  .logo {
+    width: 110px;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .carrito,
+  .carrito-icono {
+    justify-self: end;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+}
+
+
+/* HEADER RESPONSIVE CORREGIDO */
+
+@media (max-width: 1000px) {
+
+  .header {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr) 40px;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 5%;
+  }
+
+  .logo {
+    width: 150px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .carrito,
+  .carrito-icono {
+    justify-self: end;
+    margin: 0;
+    font-size: 25px;
+  }
+
+}
+
+/* PANTALLAS PEQUEÑAS */
+
+@media (max-width: 700px) {
+
+  .header {
+    grid-template-columns: 120px minmax(0, 1fr) 35px;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .logo {
+    width: 120px;
+    max-width: 100%;
+  }
+
+  .menu {
+    gap: 8px;
+  }
+
+  .menu span {
+    font-size: 10px;
+  }
+
+  .carrito,
+  .carrito-icono {
+    font-size: 23px;
+    justify-self: end;
+  }
+
+}
+
+/* ENLACES DEL MENÚ */
+
+.menu a,
+.menu a:link,
+.menu a:visited {
+  color: var(--negro);
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* PÁGINA ACTIVA */
+
+.menu a.activo,
+.menu a.activo:visited {
+  color: var(--rojo);
+  border-bottom: 2px solid var(--rojo);
+  padding-bottom: 5px;
+}
+
+/* AL PASAR EL CURSOR */
+
+.menu a:hover {
+  color: var(--rojo);
+}
+
+/* CARRITO */
+
+.carrito,
+.carrito-icono {
+  color: var(--negro);
+  text-decoration: none;
+  justify-self: end;
+}
+
+/* CELULAR */
+
+@media (max-width: 700px) {
+  .menu a {
+    font-size: 10px;
+  }
+}
+
+
